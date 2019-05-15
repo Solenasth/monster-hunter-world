@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+import Weapon from "./Weapon.jsx";
 //import { Router, Link } from "@reach/router";
 
 class App extends React.Component {
@@ -11,7 +12,7 @@ class App extends React.Component {
     };
   }
   render() {
-    return <h1>REACT IS LIVE</h1>;
+    return <Weapon />;
   }
 }
 
