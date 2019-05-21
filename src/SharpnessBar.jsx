@@ -4,27 +4,28 @@ class SharpnessBar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      Sharpness: {
-        red: 110,
-        orange: 120,
-        yellow: 40,
-        green: 50,
-        blue: 80,
-        white: 0
-      }
-    };
+    this.state = {};
   }
+  componentDidMount() {}
 
   render() {
+    const {
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      white
+    } = this.props.sharpSegments;
+
     return (
       <div className="sharpness">
-        <div className="sharpness__red" />
-        <div className="sharpness__orange" />
-        <div className="sharpness__yellow" />
-        <div className="sharpness__green" />
-        <div className="sharpness__blue" />
-        <div className="sharpness__white" />
+        <div className="sharpness__red" style={red} />
+        <div className="sharpness__orange" style={orange} />
+        <div className="sharpness__yellow" style={yellow} />
+        <div className="sharpness__green" style={green} />
+        <div className="sharpness__blue" style={blue} />
+        <div className="sharpness__white" style={white} />
       </div>
     );
   }
