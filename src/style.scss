@@ -37,11 +37,12 @@ h3 {
   font-size: 1.1em;
 }
 
-.weaponDetails {
+.equipmentDetails {
   background-color: $mhw_Theme-3-hex;
   border-radius: 0.4em;
   padding: 0.5em;
-  width: 95%;
+  width: calc(100%-0.3em);
+  margin: 0.3em;
 
   &__title {
     &__icon {
@@ -61,6 +62,7 @@ h3 {
     &__media {
       &--img {
         background-color: $mhw_Theme-5-hex;
+        width: inherit;
       }
       margin-top: 0.5em;
       height: 240px;
@@ -72,6 +74,17 @@ h3 {
       background-color: $mhw_Theme-2-hex;
     }
     &__data {
+      box-sizing: content-box;
+      border-color: $mhw_Theme-3-hex;
+      border: 0.2em;
+      border-style: solid;
+
+      &__details {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+      &__stats {
+      }
       margin: 0.5em;
       margin-right: 0;
       margin-bottom: 0;
@@ -83,8 +96,6 @@ h3 {
 }
 
 .sharpnessBars {
-  padding-left: 1em;
-  padding-right: 1em;
   &__title {
     text-align: center;
     margin-left: 4em;
