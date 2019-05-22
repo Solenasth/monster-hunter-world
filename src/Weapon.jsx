@@ -1,5 +1,6 @@
 import React from "react";
 import SharpnessBars from "./SharpnessBars.jsx";
+import SlotsBar from "./SlotsBar.jsx";
 
 class Weapon extends React.Component {
   constructor(props) {
@@ -8,6 +9,20 @@ class Weapon extends React.Component {
       weapon: "Wyvern Ignition Impact",
       type: "Great-sword",
       damage: "1081",
+      slots: [
+        {
+          rank: 1
+        },
+        {
+          rank: 2
+        },
+        {
+          rank: 3
+        },
+        {
+          rank: 1
+        }
+      ],
       durability: [
         {
           red: 90,
@@ -96,13 +111,19 @@ class Weapon extends React.Component {
               durability={this.state.durability}
               tags={[
                 "Base: ",
-                "Handicraft 1: ",
-                "Handicraft 2: ",
-                "Handicraft 3: ",
-                "Handicraft 4: ",
-                "Handicraft 5: "
+                "Level 1: ",
+                "Level 2: ",
+                "Level 3: ",
+                "Level 4: ",
+                "Level 5: "
               ]}
+              icon="https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/handicraft-skill-mhw.png"
             />
+            {this.state.slots ? (
+              <SlotsBar decorationSlots={this.state.slots} />
+            ) : (
+              <SlotsBar decorationSlots="none" />
+            )}
           </div>
         </div>
       </div>

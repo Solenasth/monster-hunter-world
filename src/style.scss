@@ -78,15 +78,50 @@ h3 {
       padding: 0.1em;
       border-radius: 0.2em;
       background-color: $mhw_Theme-4-hex;
-      &--sharpness {
-        & span {
-          width: 100px;
-          height: 25px;
-        }
-        display: flex;
-        align-items: center;
-      }
     }
+  }
+}
+
+.sharpnessBars {
+  padding-left: 1em;
+  padding-right: 1em;
+  &__title {
+    text-align: center;
+    margin-left: 4em;
+  }
+  &__subtitle {
+    &--icon {
+      width: 2.5em;
+      height: 2.5em;
+      margin-right: 4.5em;
+      margin-left: 0.5em;
+    }
+    display: flex;
+    align-items: center;
+  }
+  &__bar {
+    &--tag {
+      width: 100px;
+      height: 25px;
+    }
+    display: flex;
+    align-items: center;
+  }
+}
+
+.slotsBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    margin-right: 2em;
+  }
+  &__noDecoTitle {
+    margin-left: 2.5em;
+    margin-right: 2em;
+  }
+  &__slot {
+    margin: 0 0.4em;
   }
 }
 

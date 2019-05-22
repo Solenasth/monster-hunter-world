@@ -55,31 +55,40 @@ class SharpnessBars extends React.Component {
   };
 
   render() {
-    const { tags, durability } = this.props;
+    const { tags, durability, icon } = this.props;
     return (
-      <div>
-        <div className="weaponDetails__body__data--sharpness">
-          <span>{tags[0]}</span>
+      <div className="sharpnessBars">
+        <h3 className="sharpnessBars__title">Sharpness Details</h3>
+        <div className="sharpnessBars__bar">
+          <span className="sharpnessBars__bar--tag">{tags[0]}</span>
           <SharpnessBar sharpSegments={this.calcSharpSegments(durability[0])} />
         </div>
-        <div className="weaponDetails__body__data--sharpness">
-          <span>{tags[1]}</span>
+        <div className="sharpnessBars__subtitle">
+          <img
+            src={icon}
+            alt="handicraft icon"
+            className="sharpnessBars__subtitle--icon"
+          />
+          <h3>With Handicraft</h3>
+        </div>
+        <div className="sharpnessBars__bar">
+          <span className="sharpnessBars__bar--tag">{tags[1]}</span>
           <SharpnessBar sharpSegments={this.calcSharpSegments(durability[1])} />
         </div>
-        <div className="weaponDetails__body__data--sharpness">
-          <span>{tags[2]}</span>
+        <div className="sharpnessBars__bar">
+          <span className="sharpnessBars__bar--tag">{tags[2]}</span>
           <SharpnessBar sharpSegments={this.calcSharpSegments(durability[2])} />
         </div>
-        <div className="weaponDetails__body__data--sharpness">
-          <span>{tags[3]}</span>
+        <div className="sharpnessBars__bar">
+          <span className="sharpnessBars__bar--tag">{tags[3]}</span>
           <SharpnessBar sharpSegments={this.calcSharpSegments(durability[3])} />
         </div>
-        <div className="weaponDetails__body__data--sharpness">
-          <span>{tags[4]}</span>
+        <div className="sharpnessBars__bar">
+          <span className="sharpnessBars__bar--tag">{tags[4]}</span>
           <SharpnessBar sharpSegments={this.calcSharpSegments(durability[4])} />
         </div>
-        <div className="weaponDetails__body__data--sharpness">
-          <span>{tags[5]}</span>
+        <div className="sharpnessBars__bar">
+          <span className="sharpnessBars__bar--tag">{tags[5]}</span>
           <SharpnessBar sharpSegments={this.calcSharpSegments(durability[5])} />
         </div>
       </div>
