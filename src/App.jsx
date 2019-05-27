@@ -15,7 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <WeaponDetails />;
+        <WeaponDetails />
         <ArmorDetails />
       </div>
     );

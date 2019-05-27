@@ -1,5 +1,5 @@
 import React from "react";
-
+import EquipmentStats from "./EquipmentStats.jsx";
 import SlotsBar from "./SlotsBar.jsx";
 import Equipment_title from "./Equipment_title.jsx";
 import Media from "./Media.jsx";
@@ -8,40 +8,28 @@ class ArmorDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 684,
-      name: "Dante's Coat Alpha",
-      type: "chest",
-      rank: "high",
-      rarity: 8,
+      id: 68,
+      name: "King Beetle Vertex",
+      type: "head",
+      rank: "low",
+      rarity: 3,
       defense: {
-        base: 64,
-        max: 70,
-        augmented: 84
+        base: 22,
+        max: 50,
+        augmented: 74
       },
       resistances: {
-        fire: 3,
-        water: -3,
-        ice: -3,
-        thunder: 3,
-        dragon: 3
+        fire: -1,
+        water: -1,
+        ice: 0,
+        thunder: 2,
+        dragon: 2
       },
-      attributes: {},
-      slots: [
-        {
-          rank: 3
-        }
-      ],
+      attributes: {
+        requiredGender: "male"
+      },
+      slots: [],
       skills: [
-        {
-          id: 123,
-          level: 1,
-          description: "Affinity +3%",
-          modifiers: {
-            affinity: 3
-          },
-          skill: 39,
-          skillName: "Critical Eye"
-        },
         {
           id: 210,
           level: 1,
@@ -51,60 +39,66 @@ class ArmorDetails extends React.Component {
           skillName: "Evade Window"
         }
       ],
-      armorSet: null,
+      armorSet: {
+        id: 16,
+        name: "King Beetle",
+        rank: "low",
+        pieces: [68, 69, 70, 71, 72],
+        bonus: null
+      },
       assets: {
         imageMale:
-          "https://assets.mhw-db.com/armor/9fc056bebc12b748301ec0664a1c760456a807bb.cbb21fd47a15b182cbf9f4783b4d2c57.png",
-        imageFemale:
-          "https://assets.mhw-db.com/armor/1691ea4e9df22eb78963bb36730af2e2bb9c0389.f91b754f00d010cea9ee680013bf9ab1.png"
+          "https://assets.mhw-db.com/armor/97152146c778825566cd0001911a230fd7ccc47d.bdadd88fa6679f3d2935314598b0d7bd.png",
+        imageFemale: null
       },
       crafting: {
         materials: [
           {
             quantity: 1,
             item: {
-              id: 580,
-              name: "Red Orb",
-              description: "",
-              rarity: 8,
+              id: 145,
+              name: "Great Hornfly",
+              description:
+                "Discovered by Botanical Research. An insect with a giant horn, massive shell, and butterfly-like wings.",
+              rarity: 4,
               carryLimit: 99,
-              value: 800
+              value: 60
             }
           },
           {
-            quantity: 6,
+            quantity: 2,
             item: {
-              id: 336,
-              name: "Odogaron Sinew+",
+              id: 118,
+              name: "Dragonite Ore",
               description:
-                "Rare Odogaron material. Mostly obtained as a reward. Solid, used to craft gear.",
-              rarity: 6,
-              carryLimit: 0,
-              value: 1840
+                "An ore that yields metal superior to that of Machalite. Invaluable for making durable armor.",
+              rarity: 4,
+              carryLimit: 99,
+              value: 480
             }
           },
           {
-            quantity: 4,
+            quantity: 2,
             item: {
-              id: 337,
-              name: "Odogaron Claw+",
+              id: 122,
+              name: "Coral Crystal",
               description:
-                "Rare Odogaron material. Obtained by breaking its forelegs. Sharp, used in many weapons.",
-              rarity: 6,
-              carryLimit: 0,
-              value: 2440
+                "Crystal prized at the Smithy for use in high-grade abrasives. Mainly found in the Coral Highlands.",
+              rarity: 4,
+              carryLimit: 99,
+              value: 600
             }
           },
           {
             quantity: 1,
             item: {
-              id: 334,
-              name: "Odogaron Plate",
+              id: 164,
+              name: "Flame Sac",
               description:
-                "Odogaron material. A rare find, used to fortify gear. Said to be quite hard to come by.",
-              rarity: 5,
-              carryLimit: 0,
-              value: 3000
+                "A monster organ filled with flammable powder. Handle with extreme care.",
+              rarity: 4,
+              carryLimit: 99,
+              value: 240
             }
           }
         ]
@@ -126,6 +120,11 @@ class ArmorDetails extends React.Component {
           <Media images={this.state.assets} />
           <div className="equipmentDetails__body__data">
             <div className="equipmentDetails__body__data__details">
+              <EquipmentStats
+                defense={this.state.defense}
+                resistances={this.state.resistances}
+                attributes={this.attributes}
+              />
               {this.state.slots[0] ? (
                 <SlotsBar decorationSlots={this.state.slots} />
               ) : (

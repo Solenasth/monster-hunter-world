@@ -9,118 +9,142 @@ class WeaponDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 201,
-      name: "Lumu Knife 1",
-      type: "sword-and-shield",
-      rarity: 3,
+      id: 141,
+      name: "Hazak Grosser 2",
+      type: "long-sword",
+      rarity: 7,
       attack: {
-        display: 168,
-        raw: 120
+        display: 660,
+        raw: 200
       },
       attributes: {
-        damageType: "sever"
+        damageType: "sever",
+        elderseal: "average",
+        affinity: 100
       },
       durability: [
         {
-          red: 70,
-          orange: 50,
-          yellow: 80,
-          green: 50,
-          blue: 0,
+          red: 200,
+          orange: 70,
+          yellow: 20,
+          green: 20,
+          blue: 40,
           white: 0
         },
         {
-          red: 70,
-          orange: 50,
-          yellow: 80,
-          green: 60,
-          blue: 0,
+          red: 200,
+          orange: 70,
+          yellow: 20,
+          green: 20,
+          blue: 50,
           white: 0
         },
         {
-          red: 70,
-          orange: 50,
-          yellow: 80,
-          green: 70,
-          blue: 0,
-          white: 0
+          red: 200,
+          orange: 70,
+          yellow: 20,
+          green: 20,
+          blue: 50,
+          white: 10
         },
         {
-          red: 70,
-          orange: 50,
-          yellow: 80,
-          green: 80,
-          blue: 0,
-          white: 0
+          red: 200,
+          orange: 70,
+          yellow: 20,
+          green: 20,
+          blue: 50,
+          white: 20
         },
         {
-          red: 70,
-          orange: 50,
-          yellow: 80,
-          green: 90,
-          blue: 0,
-          white: 0
+          red: 200,
+          orange: 70,
+          yellow: 20,
+          green: 20,
+          blue: 50,
+          white: 30
         },
         {
-          red: 70,
-          orange: 50,
-          yellow: 80,
-          green: 100,
-          blue: 0,
-          white: 0
+          red: 200,
+          orange: 70,
+          yellow: 20,
+          green: 20,
+          blue: 50,
+          white: 40
         }
       ],
-      slots: [],
-      elements: [],
+      slots: [
+        {
+          rank: 2
+        }
+      ],
+      elements: [
+        {
+          type: "dragon",
+          damage: 270,
+          hidden: false
+        }
+      ],
       crafting: {
         craftable: false,
-        previous: 187,
-        branches: [202],
+        previous: 140,
+        branches: [],
         craftingMaterials: [],
         upgradeMaterials: [
           {
             quantity: 1,
             item: {
-              id: 295,
-              name: "Paolumu Shell",
+              id: 419,
+              name: "Vaal Hazak Gem",
               description:
-                "Paolumu material. Obtained by breaking its tail. Used for many purposes.",
-              rarity: 4,
+                "A rare gem said to have formed within Vaal Hazak Tissue. Holds untold potential.",
+              rarity: 8,
               carryLimit: 0,
-              value: 950
-            }
-          },
-          {
-            quantity: 3,
-            item: {
-              id: 294,
-              name: "Paolumu Scale",
-              description:
-                "Paolumu material. Mostly obtained by carving. Solid, used to craft gear.",
-              rarity: 4,
-              carryLimit: 0,
-              value: 450
+              value: 12000
             }
           },
           {
             quantity: 2,
             item: {
-              id: 293,
-              name: "Paolumu Pelt",
+              id: 415,
+              name: "Vaal Hazak Tail",
               description:
-                "Paolumu material. Mostly obtained as a reward. Broadly used for many purposes.",
-              rarity: 4,
+                "Rare Vaal Hazak material. Obtained by carving its severed tail. Stiff, used to craft gear.",
+              rarity: 7,
               carryLimit: 0,
-              value: 650
+              value: 4900
+            }
+          },
+          {
+            quantity: 6,
+            item: {
+              id: 417,
+              name: "Vaal Hazak Talon",
+              description:
+                "Rare Vaal Hazak material. Obtained by breaking its forelegs. Sharp, used in many weapons.",
+              rarity: 7,
+              carryLimit: 0,
+              value: 4750
+            }
+          },
+          {
+            quantity: 3,
+            item: {
+              id: 438,
+              name: "Xeno'jiiva Veil",
+              description:
+                "A rare Xeno'jiiva organ that stores energy that can be released in a violent torrent.",
+              rarity: 7,
+              carryLimit: 0,
+              value: 4300
             }
           }
         ]
       },
       assets: {
         icon:
-          "https://assets.mhw-db.com/weapons/sword-and-shield/icons/e1744c28d0fec4f8edde00178ae0db64.1434da92e5a7ad0916948ebfc4dc11873728f608.png",
+          "https://assets.mhw-db.com/weapons/long-sword/icons/f2e153d1dd5950d9eb8d543473f580fd.0ab4bdb9763f39b5f5099e33a4f3b3653abf5d44.png",
         image:
-          "https://assets.mhw-db.com/weapons/sword-and-shield/74c78d3d34d067a2101033e52312c5c6cbf21c5d.732b90ddd695b7f1e3521f65a9f4edc7.png"
+          "https://assets.mhw-db.com/weapons/long-sword/01caaef22e5546026d787cb5cb71a1fbc2341b54.bb6d26d65db4214d283e871a54773f0a.png"
       }
     };
   }
@@ -135,7 +159,10 @@ class WeaponDetails extends React.Component {
           <Media images={this.state.assets} />
           <div className="equipmentDetails__body__data">
             <div className="equipmentDetails__body__data__details">
-              <EquipmentStats attack={this.state.attack} />
+              <EquipmentStats
+                attack={this.state.attack}
+                attributes={this.state.attributes}
+              />
               <SharpnessBars
                 durability={this.state.durability}
                 tags={[

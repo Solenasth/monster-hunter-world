@@ -58,7 +58,7 @@ class SharpnessBars extends React.Component {
     const { tags, durability, icon } = this.props;
     return (
       <div className="sharpnessBars">
-        <h3 className="sharpnessBars__title">Sharpness Details</h3>
+        <h2 className="sharpnessBars__title">Sharpness</h2>
         <div className="sharpnessBars__bar">
           <span className="sharpnessBars__bar--tag">{tags[0]}</span>
           <SharpnessBar sharpSegments={this.calcSharpSegments(durability[0])} />
@@ -69,7 +69,7 @@ class SharpnessBars extends React.Component {
             alt="handicraft icon"
             className="sharpnessBars__subtitle--icon"
           />
-          <h3>With Handicraft</h3>
+          <h4>Handicraft</h4>
         </div>
         <div className="sharpnessBars__bar">
           <span className="sharpnessBars__bar--tag">{tags[1]}</span>

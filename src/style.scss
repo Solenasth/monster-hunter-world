@@ -22,11 +22,16 @@ h1,
 h2,
 p,
 span,
+h4,
 h3 {
   font-family: "Open Sans", sans-serif;
   color: white;
 }
 
+h4 {
+  font-size: 1em;
+  text-align: center;
+}
 h1 {
   font-size: 1.5em;
 }
@@ -35,6 +40,9 @@ h2 {
 }
 h3 {
   font-size: 1.1em;
+}
+hr {
+  width: 100%;
 }
 
 .equipmentDetails {
@@ -60,13 +68,25 @@ h3 {
     display: flex;
 
     &__media {
-      &--img {
+      &--imgWeapon {
         background-color: $mhw_Theme-5-hex;
         width: inherit;
       }
+      &__gallery {
+        display: flex;
+        &--img {
+          background-color: $mhw_Theme-5-hex;
+          padding-top: 1em;
+          width: inherit;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgba(0, 0, 0, 0.2);
+        }
+      }
       margin-top: 0.5em;
-      height: 240px;
-      width: 230px;
+      height: auto;
+      max-height: 240px;
+      width: auto;
       display: flex;
       justify-content: center;
       padding: 0.2em;
@@ -74,6 +94,7 @@ h3 {
       background-color: $mhw_Theme-2-hex;
     }
     &__data {
+      min-width: 350px;
       box-sizing: content-box;
       border-color: $mhw_Theme-3-hex;
       border: 0.2em;
@@ -98,13 +119,12 @@ h3 {
 .sharpnessBars {
   &__title {
     text-align: center;
-    margin-left: 4em;
   }
   &__subtitle {
     &--icon {
       width: 2.5em;
       height: 2.5em;
-      margin-right: 4.5em;
+      margin-right: 1em;
       margin-left: 0.5em;
     }
     display: flex;
@@ -172,5 +192,47 @@ h3 {
     display: inline-block;
     height: 15px;
     background-color: $mhw_sharpness_white;
+  }
+}
+
+.stats {
+  &__resistances,
+  &__defense,
+  &__affinity,
+  &__elderseal,
+  &__attack {
+    &--values {
+      line-height: 0.2em;
+      color: $mhw_Theme-2-hex;
+      font-size: 0.9em;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: rgba(0, 0, 0, 0.2) dotted 3px;
+    &--tag {
+      display: flex;
+    }
+    &--icon {
+      width: 1.5em;
+      height: 1.5em;
+    }
+    &--values {
+      margin-right: auto;
+      margin-left: auto;
+      line-height: 0.2em;
+      color: $mhw_Theme-2-hex;
+      font-size: 0.9em;
+      color: white;
+    }
+    &--element-icon {
+      width: 1.4em;
+      height: 1.4em;
+    }
+    &--element {
+      display: flex;
+      align-items: center;
+    }
   }
 }
