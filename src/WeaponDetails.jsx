@@ -9,142 +9,106 @@ class WeaponDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 141,
-      name: "Hazak Grosser 2",
-      type: "long-sword",
-      rarity: 7,
+      id: 1236,
+      name: 'Empress Shell "Ruin"',
+      type: "light-bowgun",
+      rarity: 8,
       attack: {
-        display: 660,
+        display: 260,
         raw: 200
       },
       attributes: {
-        damageType: "sever",
-        elderseal: "average",
-        affinity: 100
-      },
-      durability: [
-        {
-          red: 200,
-          orange: 70,
-          yellow: 20,
-          green: 20,
-          blue: 40,
-          white: 0
-        },
-        {
-          red: 200,
-          orange: 70,
-          yellow: 20,
-          green: 20,
-          blue: 50,
-          white: 0
-        },
-        {
-          red: 200,
-          orange: 70,
-          yellow: 20,
-          green: 20,
-          blue: 50,
-          white: 10
-        },
-        {
-          red: 200,
-          orange: 70,
-          yellow: 20,
-          green: 20,
-          blue: 50,
-          white: 20
-        },
-        {
-          red: 200,
-          orange: 70,
-          yellow: 20,
-          green: 20,
-          blue: 50,
-          white: 30
-        },
-        {
-          red: 200,
-          orange: 70,
-          yellow: 20,
-          green: 20,
-          blue: 50,
-          white: 40
+        damageType: "projectile",
+        deviation: "high",
+        ammoCapacities: {
+          normal: [4, 3, 2],
+          piercing: [5, 2, 0],
+          spread: [3, 2, 2],
+          sticky: [2, 1, 1],
+          cluster: [0, 0, 0],
+          recover: [0, 0],
+          poison: [0, 0],
+          paralysis: [0, 0],
+          sleep: [0, 0],
+          exhaust: [4, 0],
+          flaming: [0],
+          water: [0],
+          freeze: [0],
+          thunder: [0],
+          dragon: [1],
+          slicing: [1],
+          wyvern: [0],
+          demon: [0],
+          armor: [0],
+          tranq: [2]
         }
-      ],
+      },
       slots: [
         {
           rank: 2
         }
       ],
-      elements: [
-        {
-          type: "dragon",
-          damage: 270,
-          hidden: false
-        }
-      ],
+      elements: [],
       crafting: {
         craftable: false,
-        previous: 140,
+        previous: 1234,
         branches: [],
         craftingMaterials: [],
         upgradeMaterials: [
           {
             quantity: 1,
             item: {
-              id: 419,
-              name: "Vaal Hazak Gem",
+              id: 484,
+              name: "Research Commission Ticket",
               description:
-                "A rare gem said to have formed within Vaal Hazak Tissue. Holds untold potential.",
-              rarity: 8,
+                "A ticket issued by the commander to those who have aided the Research Commission. Show it to the Smithy!",
+              rarity: 0,
               carryLimit: 0,
-              value: 12000
-            }
-          },
-          {
-            quantity: 2,
-            item: {
-              id: 415,
-              name: "Vaal Hazak Tail",
-              description:
-                "Rare Vaal Hazak material. Obtained by carving its severed tail. Stiff, used to craft gear.",
-              rarity: 7,
-              carryLimit: 0,
-              value: 4900
-            }
-          },
-          {
-            quantity: 6,
-            item: {
-              id: 417,
-              name: "Vaal Hazak Talon",
-              description:
-                "Rare Vaal Hazak material. Obtained by breaking its forelegs. Sharp, used in many weapons.",
-              rarity: 7,
-              carryLimit: 0,
-              value: 4750
+              value: 0
             }
           },
           {
             quantity: 3,
             item: {
-              id: 438,
-              name: "Xeno'jiiva Veil",
+              id: 594,
+              name: "Lunastra Wing",
               description:
-                "A rare Xeno'jiiva organ that stores energy that can be released in a violent torrent.",
+                "Rare Lunastra material. Obtained by breaking its wings. Supple, used to craft gear.",
               rarity: 7,
               carryLimit: 0,
-              value: 4300
+              value: 4500
+            }
+          },
+          {
+            quantity: 3,
+            item: {
+              id: 408,
+              name: "Nergigante Horn+",
+              description:
+                "Rare Nergigante material. Obtained by breaking its horns. Stout, used in many weapons.",
+              rarity: 7,
+              carryLimit: 0,
+              value: 5000
+            }
+          },
+          {
+            quantity: 1,
+            item: {
+              id: 411,
+              name: "Nergigante Gem",
+              description:
+                "A rare gem said to have formed within Nergigante tissue. Holds untold potential.",
+              rarity: 8,
+              carryLimit: 0,
+              value: 12000
             }
           }
         ]
       },
       assets: {
-        icon:
-          "https://assets.mhw-db.com/weapons/long-sword/icons/f2e153d1dd5950d9eb8d543473f580fd.0ab4bdb9763f39b5f5099e33a4f3b3653abf5d44.png",
+        icon: null,
         image:
-          "https://assets.mhw-db.com/weapons/long-sword/01caaef22e5546026d787cb5cb71a1fbc2341b54.bb6d26d65db4214d283e871a54773f0a.png"
+          "https://assets.mhw-db.com/weapons/light-bowgun/db60d5a211043cca3c54e29c21e90ccac8c88a86.f597ffb50fd770b91d925d8e6f16135b.png"
       }
     };
   }
@@ -154,7 +118,13 @@ class WeaponDetails extends React.Component {
   render() {
     return (
       <div className="equipmentDetails">
-        <Equipment_title name={this.state.name} icon={this.state.assets.icon} />
+        <Equipment_title
+          name={this.state.name}
+          icon={this.state.assets.icon}
+          attack={this.state.attack}
+          type={this.state.type}
+          rarity={this.state.rarity}
+        />
         <div className="equipmentDetails__body">
           <Media images={this.state.assets} />
           <div className="equipmentDetails__body__data">
@@ -162,6 +132,7 @@ class WeaponDetails extends React.Component {
               <EquipmentStats
                 attack={this.state.attack}
                 attributes={this.state.attributes}
+                elements={this.state.elements}
               />
               <SharpnessBars
                 durability={this.state.durability}

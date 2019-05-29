@@ -122,8 +122,8 @@ hr {
   }
   &__subtitle {
     &--icon {
-      width: 2.5em;
-      height: 2.5em;
+      width: 1.5em;
+      height: 1.5em;
       margin-right: 1em;
       margin-left: 0.5em;
     }
@@ -196,15 +196,45 @@ hr {
 }
 
 .stats {
+  &__element,
+  &__phialType {
+    &--values {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.stats {
   &__resistances,
   &__defense,
   &__affinity,
   &__elderseal,
+  &__element,
+  &__damageType,
+  &__bonusDefense,
+  &__boostType,
+  &__phialType,
   &__attack {
     &--values {
       line-height: 0.2em;
       color: $mhw_Theme-2-hex;
       font-size: 0.9em;
+      &-hidden {
+        color: gray;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        width: 100%;
+        font-size: 0.9em;
+      }
+    }
+
+    &__container {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     display: flex;
@@ -212,13 +242,23 @@ hr {
     align-items: center;
     border-bottom: rgba(0, 0, 0, 0.2) dotted 3px;
     &--tag {
+      width: 10em;
+      font-size: 0.9em;
       display: flex;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
     }
     &--icon {
       width: 1.5em;
       height: 1.5em;
+      margin-right: 1em;
+      margin-left: 0.5em;
     }
     &--values {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+
+      justify-content: left;
       margin-right: auto;
       margin-left: auto;
       line-height: 0.2em;
@@ -229,10 +269,13 @@ hr {
     &--element-icon {
       width: 1.4em;
       height: 1.4em;
+      margin-right: 0.4em;
     }
+
     &--element {
       display: flex;
       align-items: center;
+      justify-items: left;
     }
   }
 }

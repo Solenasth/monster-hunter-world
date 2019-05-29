@@ -56,7 +56,7 @@ class SharpnessBars extends React.Component {
 
   render() {
     const { tags, durability, icon } = this.props;
-    return (
+    return durability ? (
       <div className="sharpnessBars">
         <h2 className="sharpnessBars__title">Sharpness</h2>
         <div className="sharpnessBars__bar">
@@ -92,7 +92,7 @@ class SharpnessBars extends React.Component {
           <SharpnessBar sharpSegments={this.calcSharpSegments(durability[5])} />
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 
