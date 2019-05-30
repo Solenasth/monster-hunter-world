@@ -10,6 +10,9 @@ import Stat_damageType from "./Stat_damageType.jsx";
 import Stat_bonusDefense from "./Stat_bonusDefense.jsx";
 import Stat_phials from "./Stat_phials.jsx";
 import Stat_boost from "./Stat_boost.jsx";
+import Stat_shellingType from "./Stat_shellingType.jsx";
+import Stat_deviation from "./Stat_deviation.jsx";
+import Stat_specialAmmo from "./Stat_specialAmmo.jsx";
 
 class EquipmentStats extends React.Component {
   constructor(props) {
@@ -19,7 +22,14 @@ class EquipmentStats extends React.Component {
   }
   componentDidMount() {}
   render() {
-    const { attack, attributes, elements, defense, resistances } = this.props;
+    const {
+      attack,
+      attributes,
+      elements,
+      defense,
+      resistances,
+      type
+    } = this.props;
     return (
       <div className="stats">
         <Stat_attack attack={attack} />
@@ -32,6 +42,9 @@ class EquipmentStats extends React.Component {
         <Stat_bonusDefense attributes={attributes} />
         <Stat_phials attributes={attributes} />
         <Stat_boost attributes={attributes} />
+        <Stat_shellingType attributes={attributes} />
+        <Stat_deviation attributes={attributes} />
+        <Stat_specialAmmo attributes={attributes} type={type} />
       </div>
     );
   }

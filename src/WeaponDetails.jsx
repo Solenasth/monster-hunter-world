@@ -9,98 +9,98 @@ class WeaponDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 1236,
-      name: 'Empress Shell "Ruin"',
-      type: "light-bowgun",
-      rarity: 8,
+      id: 1238,
+      name: "Gluttonous Fangcannon",
+      type: "heavy-bowgun",
+      rarity: 7,
       attack: {
-        display: 260,
-        raw: 200
+        display: 270,
+        raw: 180
       },
       attributes: {
         damageType: "projectile",
-        deviation: "high",
+        deviation: "average",
         ammoCapacities: {
-          normal: [4, 3, 2],
-          piercing: [5, 2, 0],
-          spread: [3, 2, 2],
-          sticky: [2, 1, 1],
-          cluster: [0, 0, 0],
-          recover: [0, 0],
+          normal: [5, 4, 0],
+          piercing: [5, 0, 0],
+          spread: [10, 6, 0],
+          sticky: [2, 0, 0],
+          cluster: [1, 1, 0],
+          recover: [1, 1],
           poison: [0, 0],
-          paralysis: [0, 0],
+          paralysis: [2, 0],
           sleep: [0, 0],
-          exhaust: [4, 0],
+          exhaust: [1, 0],
           flaming: [0],
           water: [0],
           freeze: [0],
           thunder: [0],
-          dragon: [1],
-          slicing: [1],
+          dragon: [0],
+          slicing: [0],
           wyvern: [0],
-          demon: [0],
-          armor: [0],
-          tranq: [2]
+          demon: [1],
+          armor: [1],
+          tranq: [3]
         }
       },
       slots: [
         {
-          rank: 2
+          rank: 1
         }
       ],
       elements: [],
       crafting: {
         craftable: false,
-        previous: 1234,
+        previous: 1024,
         branches: [],
         craftingMaterials: [],
         upgradeMaterials: [
           {
-            quantity: 1,
+            quantity: 2,
             item: {
-              id: 484,
-              name: "Research Commission Ticket",
+              id: 417,
+              name: "Vaal Hazak Talon",
               description:
-                "A ticket issued by the commander to those who have aided the Research Commission. Show it to the Smithy!",
-              rarity: 0,
-              carryLimit: 0,
-              value: 0
-            }
-          },
-          {
-            quantity: 3,
-            item: {
-              id: 594,
-              name: "Lunastra Wing",
-              description:
-                "Rare Lunastra material. Obtained by breaking its wings. Supple, used to craft gear.",
+                "Rare Vaal Hazak material. Obtained by breaking its forelegs. Sharp, used in many weapons.",
               rarity: 7,
               carryLimit: 0,
-              value: 4500
+              value: 4750
             }
           },
           {
-            quantity: 3,
+            quantity: 8,
             item: {
-              id: 408,
-              name: "Nergigante Horn+",
+              id: 219,
+              name: "Great Jagras Claw+",
               description:
-                "Rare Nergigante material. Obtained by breaking its horns. Stout, used in many weapons.",
-              rarity: 7,
+                "Rare Great Jagras material. Obtained by breaking its forelegs. Sharp, used in many weapons.",
+              rarity: 6,
               carryLimit: 0,
-              value: 5000
+              value: 1620
+            }
+          },
+          {
+            quantity: 6,
+            item: {
+              id: 218,
+              name: "Great Jagras Hide+",
+              description:
+                "Rare Great Jagras material. Mostly obtained as a reward. Supple, used to craft gear.",
+              rarity: 6,
+              carryLimit: 0,
+              value: 1220
             }
           },
           {
             quantity: 1,
             item: {
-              id: 411,
-              name: "Nergigante Gem",
+              id: 125,
+              name: "Novacrystal",
               description:
-                "A rare gem said to have formed within Nergigante tissue. Holds untold potential.",
-              rarity: 8,
-              carryLimit: 0,
-              value: 12000
+                "High quality Lightcrystal. Highly coveted for its rarity, it's used for only the finest of metalworking.",
+              rarity: 6,
+              carryLimit: 99,
+              value: 2440
             }
           }
         ]
@@ -108,7 +108,7 @@ class WeaponDetails extends React.Component {
       assets: {
         icon: null,
         image:
-          "https://assets.mhw-db.com/weapons/light-bowgun/db60d5a211043cca3c54e29c21e90ccac8c88a86.f597ffb50fd770b91d925d8e6f16135b.png"
+          "https://assets.mhw-db.com/weapons/heavy-bowgun/967e303ec8b04521f00a3a94aace99ffa4d9862c.c2e5bf6699d9e508a7b4e277360453d6.png"
       }
     };
   }
@@ -133,6 +133,7 @@ class WeaponDetails extends React.Component {
                 attack={this.state.attack}
                 attributes={this.state.attributes}
                 elements={this.state.elements}
+                type={this.state.type}
               />
               <SharpnessBars
                 durability={this.state.durability}

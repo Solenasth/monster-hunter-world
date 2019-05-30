@@ -21,6 +21,9 @@ import damage_type from "./img/damage_type_icon.png";
 import bonus_defense from "./img/bonus_defense_icon.png";
 import weapon_phial from "./img/weapon_phial_icon.png";
 import boost from "./img/boost_icon.png";
+import shellingType from "./img/shellling_type_icon.png";
+import deviation from "./img/deviation_icon.png";
+import special_ammo from "./img/special_ammo.png";
 
 export const common_icons = {
   elements: {
@@ -46,6 +49,9 @@ export const common_icons = {
     damage_type: damage_type,
     bonus_defense: bonus_defense,
     weapon_phial: weapon_phial,
-    boost: boost
+    boost: boost,
+    shellingType: shellingType,
+    deviation: deviation,
+    specialAmmo: special_ammo
   }
 };
