@@ -16,7 +16,7 @@ class App extends React.Component {
   url = "https://mhw-db.com/";
 
   getOneLameSword = () => {
-    Axios.get(this.url + this.state.primarySearch + '?q={"id":1}').then(
+    Axios.get(this.url + this.state.primarySearch + '?q={"id":260}').then(
       results => this.setState({ results: results.data })
     );
   };

@@ -8,15 +8,15 @@ class Results extends React.Component {
   }
 
   handleResults(results, type) {
-    var somethingToDisplay = results && Array.isArray(results);
-    if (somethingToDisplay) {
+    
+    if (results && Array.isArray(results)) {
       switch (type) {
         case "weapons": {
-          return <WeaponDetails weapon={results[0]} key={results[0].id} />;
+          return results.map(weapon => <WeaponDetails weapon={weapon} key={weapon.id}/>)
         }
         case "armor":
           return results.map(armor => {
-            <ArmorDetails armor={armor} key={armor.id} />;
+            return <ArmorDetails armor={armor} key={armor.id} />;
           });
         default:
           return <h1>nothing to display 1</h1>;
