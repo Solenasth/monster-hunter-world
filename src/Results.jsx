@@ -1,22 +1,19 @@
 import React from "react";
 import WeaponDetails from "./WeaponDetails.jsx";
 import ArmorDetails from "./ArmorDetails.jsx";
+import ResultCard from "./ResultCard.jsx";
 
 class Results extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.getDetails(1);
-  }
-
-  handleResults(results, type) {
+  handleResults(results, type, initial) {
     if (results && Array.isArray(results)) {
       switch (type) {
         case "weapons": {
           return results.map(weapon => (
-            <WeaponDetails weapon={weapon} key={weapon.id} />
+            <ResultCard params={weapon} key={weapon.id} expandDetails={()=>console.log("hello")} category={type}/>
           ));
         }
         case "armor":
@@ -27,8 +24,8 @@ class Results extends React.Component {
           return <h1>Oh no, the api returned something i cant handle yet</h1>;
       }
     } else {
-      return this.props.details ? (
-        <WeaponDetails weapon={this.state.details[0]} />
+      return initial ? (
+        <WeaponDetails weapon={initial} />
       ) : (
         <h1>loading</h1>
       );
@@ -36,8 +33,8 @@ class Results extends React.Component {
   }
 
   render() {
-    const { type, results, getDetails } = this.props;
-    return <div>{this.handleResults(results, type)}</div>;
+    const { type, results, initial } = this.props;
+    return <div>{this.handleResults(results, type,initial)}</div>;
   }
 }
 

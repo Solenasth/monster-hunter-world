@@ -5,18 +5,24 @@ import SearchBox from "./SearchBox.jsx";
 import Results from "./Results.jsx";
 import Axios from "axios";
 import { Router, Link } from "@reach/router";
+import { navigate } from "@reach/router/lib/history";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = { primarySearch: "weapons" };
+    this.getInitial();
   }
   url = "https://mhw-db.com/";
+  cardQuery ='&p={"id":true, "name":true, "type":true, "rarity":true}';
 
-  getOneLameSword = () => {
-    Axios.get(this.url + this.state.primarySearch + '?q={"id":260}').then(
-      results => this.setState({ results: results.data })
+  search = () => {
+    Axios.get(this.url + this.state.primarySearch + '?q={"type":"great-sword"}' +this.cardQuery).then(
+      results => {
+      this.setState({ results: results.data })
+      navigate("/");
+    }
     );
   };
 
@@ -32,13 +38,13 @@ class App extends React.Component {
         '?q={"id":' +
         this.getRandomInt(0, 1200) +
         "}"
-    ).then(details => this.setState({ details: details.data }));
+    ).then(details => this.setState({ details: details.data[0] }));
   };
 
   getDetails = id => {
     Axios.get(
       this.url + this.state.primarySearch + '?q={"id":' + id + "}"
-    ).then(details => this.setState({ details: details.data }));
+    ).then(details => this.setState({ details: details.data[0] }));
   };
 
   handlePrimarySearchChange = event => {
@@ -61,14 +67,14 @@ class App extends React.Component {
         <Router>
           <SearchBox
             path="/search"
-            search={this.getOneLameSword}
+            search={this.search}
             searchChange={this.handlePrimarySearchChange}
           />
           <Results
             path="/"
             type={this.state.primarySearch}
             results={this.state.results}
-            getDetails={this.getInitial}
+            initial={this.state.details}
           />
         </Router>
       </div>

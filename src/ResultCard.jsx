@@ -8,7 +8,8 @@ class ResultCard extends React.Component {
   }
 
   render() {
-    const { name, type, rarity, expandDetails, category } = this.props;
+    const {  expandDetails, category, params } = this.props;
+    const{name, type, rarity, id} = params;
     return (
       <div className="resultCard">
         <button className="resultCard__active" onClick={expandDetails}>
@@ -18,7 +19,7 @@ class ResultCard extends React.Component {
               alt="weapon icon"
               className="resultCard__active--icon"
             />
-          ) : (
+          ) : ( 
             <img
               src={armor_icon_matrix[type][rarity - 1]}
               alt="armor icon"

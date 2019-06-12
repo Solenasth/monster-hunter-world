@@ -71,6 +71,7 @@ hr {
       &--imgWeapon {
         background-color: $mhw_Theme-5-hex;
         width: inherit;
+        min-width: 230px;
       }
       &__gallery {
         display: flex;
