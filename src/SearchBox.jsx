@@ -19,7 +19,7 @@ class SearchBox extends React.Component {
             htmlFor="primary search parameter"
             className="searchBox__form__label"
           >
-            Search for
+            Search
             <select
               onBlur={searchChange}
               name="primary search"
@@ -30,6 +30,23 @@ class SearchBox extends React.Component {
               <option value="armor">Armor</option>
             </select>
           </label>
+
+          <label
+            htmlFor="secondary search parameter"
+            className="searchBox__form__label"
+          >
+            by
+            <select
+              onBlur={searchChange}
+              name="secondary search"
+              id="secondary-search"
+              className="searchBox__form__label--select"
+            >
+              <option value="weapons">type</option>
+              <option value="armor">Armor</option>
+            </select>
+          </label>
+
           <button
             onClick={this.getOneLameSword}
             className="searchBox__form__button"
