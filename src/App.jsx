@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { primarySearch: "weapons" };
+    this.state = { primarySearch: "weapons", secondarySearch: "great-sword" };
     this.getInitial();
   }
   url = "https://mhw-db.com/";
@@ -22,7 +22,9 @@ class App extends React.Component {
     Axios.get(
       this.url +
         this.state.primarySearch +
-        '?q={"type":"great-sword"}' +
+        '?q={"type":"' +
+        this.state.secondarySearch +
+        '"}' +
         this.cardQuery
     ).then(results => {
       this.setState({ results: results.data });
@@ -69,8 +71,8 @@ class App extends React.Component {
     );
   };
 
-  handlePrimarySearchChange = event => {
-    this.setState({ primarySearch: event.target.value });
+  handleSecondarySearchChange = event => {
+    this.setState({ secondarySearch: event.target.value });
   };
 
   render() {
@@ -90,7 +92,7 @@ class App extends React.Component {
           <SearchBox
             path="/search"
             search={this.search}
-            searchChange={this.handlePrimarySearchChange}
+            searchChange={this.handleSecondarySearchChange}
           />
           <Results
             path={"/search/:primarySearch/results"}

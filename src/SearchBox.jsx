@@ -26,27 +26,22 @@ class SearchBox extends React.Component {
               id="primary-search"
               className="searchBox__form__label--select"
             >
-              <option value="weapons">Weapons</option>
-              <option value="armor">Armor</option>
+              <option value="great-sword">Great Sword</option>
+              <option value="dual-blades">Dual Blades</option>
+              <option value="lance">lance</option>
+              <option value="charge-blade">Charge Blade</option>
+              <option value="heavy-bowgun">Heavy Bowgun</option>
+              <option value="long-sword">Long Sword</option>
+              <option value="hammer">Hammer</option>
+              <option value="gunlance">Gunlance</option>
+              <option value="insect-glaive">Insect Glaive</option>
+              <option value="bow">Bow</option>
+              <option value="sword-and-shield">Sword and Shield</option>
+              <option value="hunting-horn">Hunting Horn</option>
+              <option value="switch-axe">Switch Axe</option>
+              <option value="light-bowgun">Light bowgun</option>
             </select>
           </label>
-
-          <label
-            htmlFor="secondary search parameter"
-            className="searchBox__form__label"
-          >
-            by
-            <select
-              onBlur={searchChange}
-              name="secondary search"
-              id="secondary-search"
-              className="searchBox__form__label--select"
-            >
-              <option value="weapons">type</option>
-              <option value="armor">Armor</option>
-            </select>
-          </label>
-
           <button
             onClick={this.getOneLameSword}
             className="searchBox__form__button"
